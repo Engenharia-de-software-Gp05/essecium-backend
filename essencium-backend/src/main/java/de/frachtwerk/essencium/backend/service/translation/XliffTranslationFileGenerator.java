@@ -62,8 +62,7 @@ public class XliffTranslationFileGenerator implements TranslationFileCreator {
     var locales = translationService.getAvailableLocales();
     var byteArrayOutputStream = new ByteArrayOutputStream();
 
-    try (byteArrayOutputStream;
-        var streamWriter = new OutputStreamWriter(byteArrayOutputStream);
+    try (var streamWriter = new OutputStreamWriter(byteArrayOutputStream, StandartCharsets.UTF_8);
         var writer = new XLIFFWriter()) {
       writer.create(streamWriter, DEFAULT_SOURCE_LOCALE.getLanguage());
       locales.forEach(
