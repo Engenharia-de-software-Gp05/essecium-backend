@@ -10,6 +10,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "essencium.jpa")
 public class AppConfigJpaProperties {
-  private boolean camelCaseToUnderscore = false;
-  private String tablePrefix = "FW_";
+  private final boolean camelCaseToUnderscore = false;
+  private final String tablePrefix = "FW_";
 }
