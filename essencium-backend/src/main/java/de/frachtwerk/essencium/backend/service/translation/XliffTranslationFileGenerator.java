@@ -90,7 +90,7 @@ public class XliffTranslationFileGenerator implements TranslationFileCreator {
     final var byteArrayOutputStream = new ByteArrayOutputStream();
 
     try (byteArrayOutputStream;
-        final var streamWriter = new OutputStreamWriter(byteArrayOutputStream);
+        final var streamWriter = new OutputStreamWriter(byteArrayOutputStream, StandartCharsets.UTF_8);
         final var writer = new XLIFFWriter()) {
       writer.create(streamWriter, DEFAULT_SOURCE_LOCALE.getLanguage(), locale.getLanguage());
       writer.writeStartFile(new StartFileData(locale.getLanguage()));
